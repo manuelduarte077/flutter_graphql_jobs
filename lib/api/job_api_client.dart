@@ -1,6 +1,6 @@
 import 'package:graphql/client.dart';
 
-import 'package:flutter_graphql_jobs/api/api.dart';
+import 'package:flutter_graphql_jobs/api/models/models.dart';
 import 'package:flutter_graphql_jobs/api/queries/queries.dart' as queries;
 
 class GetJobsRequestFailure implements Exception {}
@@ -22,7 +22,7 @@ class JobsApiClient {
 
   final GraphQLClient _graphQLClient;
 
-  // Future<List<Job>?> getJobs() async {
+  // Future<List<Job>> getJobs() async {
   //   final result = await _graphQLClient.query(
   //     QueryOptions(
   //         document: gql(queries.getJobs),
@@ -34,7 +34,7 @@ class JobsApiClient {
 
   //   if (result.hasException) throw GetJobsRequestFailure();
 
-  //   return result.parsedData;
+  //   return result.parsedData!;
   // }
 
   Future<List<Job>> getJobs() async {
@@ -45,6 +45,7 @@ class JobsApiClient {
     if (result.hasException) throw GetJobsRequestFailure();
 
     final data = result.data?['jobs'] as List;
+
     return data.map((e) => Job.fromJson(e)).toList();
   }
 }

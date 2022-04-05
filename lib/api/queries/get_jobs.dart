@@ -4,7 +4,13 @@ const getJobs = r'''
       id,
       title,
       locationNames,
-      isFeatured
+      isFeatured,
+      description,
+			tags{
+        id
+				name
+        slug
+			}
     }
   }
 ''';
