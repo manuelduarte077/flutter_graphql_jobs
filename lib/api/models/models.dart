@@ -1,1 +1,1 @@
-export 'job.dart';
+export 'jobs/job.dart';
