@@ -1,1 +1,1 @@
-export 'package:flutter_graphql_jobs/screens/jobs_screen.dart';
+export 'package:flutter_graphql_jobs/screens/jobs/jobs_screen.dart';
