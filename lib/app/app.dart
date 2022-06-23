@@ -20,9 +20,12 @@ class MyApp extends StatelessWidget {
       create: (_) => JobsBloc(
         jobsApiClient: jobsApiClient,
       )..add(JobsFetchStarted()),
-      child: const MaterialApp(
+      child: MaterialApp(
         debugShowCheckedModeBanner: false,
         onGenerateRoute: AppRouter.onGenerateRoute,
+        theme: ThemeData(
+          useMaterial3: true,
+        ),
         initialRoute: JobsScreen.routeName,
       ),
     );

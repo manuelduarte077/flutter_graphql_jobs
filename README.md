@@ -1,1 +1,1 @@
-# flutter_graphql_jobs
+# Flutter GraphQL API Example

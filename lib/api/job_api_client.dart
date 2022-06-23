@@ -22,20 +22,6 @@ class JobsApiClient {
 
   final GraphQLClient _graphQLClient;
 
-  // Future<List<Job>> getJobs() async {
-  //   final result = await _graphQLClient.query(
-  //     QueryOptions(
-  //         document: gql(queries.getJobs),
-  //         parserFn: (o) {
-  //           final data = o['jobs'] as List;
-  //           return data.map((e) => Job.fromJson(e)).toList();
-  //         }),
-  //   );
-
-  //   if (result.hasException) throw GetJobsRequestFailure();
-
-  //   return result.parsedData!;
-  // }
 
   Future<List<Job>> getJobs() async {
     final result = await _graphQLClient.query(

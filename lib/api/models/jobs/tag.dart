@@ -7,7 +7,7 @@ class Tag {
   final String id;
   final String name;
   final String slug;
-
+  
   const Tag({
     required this.id,
     required this.name,
