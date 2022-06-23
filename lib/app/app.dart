@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:flutter_graphql_jobs/bloc/jobs_bloc.dart';
 import 'package:flutter_graphql_jobs/api/job_api_client.dart';
 import 'package:flutter_graphql_jobs/routes/app_route.dart';
-import 'package:flutter_graphql_jobs/screens/jobs/jobs_screen.dart';
+import 'package:flutter_graphql_jobs/screens/screens.dart';
+
+import '../blocs/jobs/jobs_bloc.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({
@@ -22,11 +23,12 @@ class MyApp extends StatelessWidget {
       )..add(JobsFetchStarted()),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        onGenerateRoute: AppRouter.onGenerateRoute,
         theme: ThemeData(
           useMaterial3: true,
         ),
-        initialRoute: JobsScreen.routeName,
+        initialRoute: HomeScreen.routeName,
+        onGenerateRoute: AppRouter.onGenerateRoute,
+
       ),
     );
   }

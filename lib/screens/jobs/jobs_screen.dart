@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_graphql_jobs/api/models/jobs/tag.dart';
-import 'package:flutter_graphql_jobs/api/models/models.dart';
-import 'package:flutter_graphql_jobs/bloc/jobs_bloc.dart';
+
+import 'package:flutter_graphql_jobs/api/api.dart';
+
+import '../../blocs/jobs/jobs_bloc.dart';
+
 
 class JobsScreen extends StatelessWidget {
   const JobsScreen({Key? key}) : super(key: key);
@@ -88,7 +90,6 @@ class JobsList extends StatelessWidget {
             job.isFeatured == true ? Icons.star : Icons.star_border,
             color: Colors.orangeAccent,
           ),
-          // subtitle: job.locationNames != null ? Text(job.locationNames!) : null,
           subtitle: Text(job.locationNames ?? ''),
         ),
         TagsJobsList(tags: job.tags),
@@ -98,12 +99,12 @@ class JobsList extends StatelessWidget {
 }
 
 class TagsJobsList extends StatelessWidget {
-  TagsJobsList({
+  const TagsJobsList({
     Key? key,
     this.tags,
   }) : super(key: key);
 
-  List<Tag>? tags;
+ final List<Tag>? tags;
 
   @override
   Widget build(BuildContext context) {
