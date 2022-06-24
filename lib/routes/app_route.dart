@@ -9,6 +9,8 @@ class AppRouter {
     switch (settings.name) {
       case '/home':
         return HomeScreen.route();
+      case '/splash':
+        return SplashScreen.route();
       case '/jobs':
         return JobsScreen.route();
       case '/job-details':
