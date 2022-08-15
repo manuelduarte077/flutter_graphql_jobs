@@ -91,7 +91,12 @@ class JobsList extends StatelessWidget {
           // subtitle: job.locationNames != null ? Text(job.locationNames!) : null,
           subtitle: Text(job.locationNames ?? ''),
         ),
-        TagsJobsList(tags: job.tags),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TagsJobsList(tags: job.tags),
+          ],
+        ),
       ],
     );
   }

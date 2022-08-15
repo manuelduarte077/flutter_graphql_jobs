@@ -4,6 +4,7 @@ import 'package:flutter_markdown/flutter_markdown.dart';
 
 class JobsDetailScreen extends StatelessWidget {
   final Job job;
+
   const JobsDetailScreen({Key? key, required this.job}) : super(key: key);
 
   static const String routeName = '/job-details';
@@ -21,7 +22,14 @@ class JobsDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(job.title),
+        // iconTheme: ,
+        backgroundColor: Colors.transparent,
+        iconTheme: const IconThemeData(color: Colors.black),
+        title: Text(
+          job.title,
+          style: const TextStyle(color: Colors.black),
+        ),
+        elevation: 0,
       ),
       body: SingleChildScrollView(
         child: Padding(
