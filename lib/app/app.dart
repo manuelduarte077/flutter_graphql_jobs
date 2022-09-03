@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_graphql_jobs/bloc/jobs_bloc.dart';
 import 'package:flutter_graphql_jobs/api/job_api_client.dart';
+import 'package:flutter_graphql_jobs/jobs/jobs_screen.dart';
 import 'package:flutter_graphql_jobs/routes/app_route.dart';
-import 'package:flutter_graphql_jobs/screens/jobs/jobs_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({
@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
       )..add(JobsFetchStarted()),
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        onGenerateRoute: AppRouter.onGenerateRoute,
         initialRoute: JobsScreen.routeName,
+        onGenerateRoute: AppRouter.onGenerateRoute,
       ),
     );
   }

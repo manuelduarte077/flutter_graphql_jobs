@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_graphql_jobs/api/models/models.dart';
-import 'package:flutter_graphql_jobs/screens/jobs/jobs_details.dart';
-import 'package:flutter_graphql_jobs/screens/jobs/jobs_screen.dart';
+import 'package:flutter_graphql_jobs/jobs/jobs_screen.dart';
+import 'package:flutter_graphql_jobs/jobs/jobs_details.dart';
 import 'package:flutter_graphql_jobs/utils/error_route.dart';
 
 class AppRouter {

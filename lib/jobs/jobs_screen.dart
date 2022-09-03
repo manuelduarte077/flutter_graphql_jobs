@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_graphql_jobs/api/models/jobs/tag.dart';
 import 'package:flutter_graphql_jobs/api/models/models.dart';
@@ -91,11 +93,15 @@ class JobsList extends StatelessWidget {
           // subtitle: job.locationNames != null ? Text(job.locationNames!) : null,
           subtitle: Text(job.locationNames ?? ''),
         ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            TagsJobsList(tags: job.tags),
-          ],
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: TagsJobsList(tags: job.tags),
+            ),
+          ),
         ),
       ],
     );
@@ -113,6 +119,7 @@ class TagsJobsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wrap(
+      spacing: 10,
       children: [
         for (var tag in tags!)
           Chip(
